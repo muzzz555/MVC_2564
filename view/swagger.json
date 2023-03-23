@@ -1,0 +1,178 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "MVC1",
+    "title": "Assignment"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Assignment": {
+      "post": {
+        "tags": [
+          "Assignment"
+        ],
+        "summary": "create Assignment",
+        "description": "",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "Assignment",
+            "description": "Requirement Assignment",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "detailsAssignment",
+            "description": "detailsAssignment",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "date",
+            "description": "date",
+            "type": "string",
+            "default": "01-01-2000"
+          },
+          {
+            "in": "formData",
+            "name": "studentId",
+            "description": "Requirement StudentId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "Create Assignment success"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "Worng Input"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Turnin": {
+      "post": {
+        "tags": [
+          "TurnIn"
+        ],
+        "summary": "TurnIn Assignment",
+        "description": "",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "studentId",
+            "description": "studentId",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "Assignment",
+            "description": "Assignment",
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "detailsTurnin",
+            "description": "detailsTurnin",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "TurnIn Success"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "Worng Input"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TurninGet": {
+      "get": {
+        "tags": [
+          "TurninGet"
+        ],
+        "summary": "TurnIn Gett",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "TurnIn Success"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "properties": {
+                "message": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "message": "Worng Input"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
